@@ -4,9 +4,11 @@
 ✅All Linux Support
 ❌Windows Not Support
 
-## 🔄️Instalasi
+## 🔄️Install
 Copas Saja Link Berikut Ini Ke Terminal Server Kalian
-```https://raw.githubusercontent.com/thehashslinging/lampautoinstall/refs/heads/main/autoLAMP.bash```
+```bash
+bash <(curl -s https://raw.githubusercontent.com/thehashslinging/lampautoinstall/refs/heads/main/autoLAMP.bash)
+```
 
 ⚠️Warning
 Ini Akan membuat Port Apache Kalian Menjadi **2002**
