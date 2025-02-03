@@ -26,6 +26,14 @@ sudo apt install -y php libapache2-mod-php php-mysql php-mbstring php-xml php-cu
 echo "Menginstal phpMyAdmin..."
 sudo apt install -y phpmyadmin
 
+# Nonaktifkan strict mode di MariaDB
+echo "Menonaktifkan strict mode di MariaDB..."
+sudo sed -i '/\[mysqld\]/a sql_mode=""' /etc/mysql/mariadb.conf.d/50-server.cnf
+
+# Restart MariaDB untuk menerapkan perubahan
+echo "Restarting MariaDB..."
+sudo systemctl restart mariadb
+
 # Restart Apache lagi untuk memastikan semua konfigurasi diterapkan
 echo "Restarting Apache..."
 sudo systemctl restart apache2
