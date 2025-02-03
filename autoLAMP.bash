@@ -30,6 +30,11 @@ sudo apt install -y phpmyadmin
 echo "Menonaktifkan strict mode di MariaDB..."
 sudo sed -i '/\[mysqld\]/a sql_mode=""' /etc/mysql/mariadb.conf.d/50-server.cnf
 
+# Mengatur batas upload dan import phpMyAdmin menjadi 100MB
+echo "Mengatur batas upload dan import phpMyAdmin menjadi 100MB..."
+sudo sed -i '/upload_max_filesize/c\upload_max_filesize = 100M' /etc/php/*/apache2/php.ini
+sudo sed -i '/post_max_size/c\post_max_size = 100M' /etc/php/*/apache2/php.ini
+
 # Restart MariaDB untuk menerapkan perubahan
 echo "Restarting MariaDB..."
 sudo systemctl restart mariadb
